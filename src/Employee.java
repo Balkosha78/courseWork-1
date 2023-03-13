@@ -1,37 +1,22 @@
+
 public class Employee {
-    private String firstName;
-    private String MiddleName;
-    private String LastName;
+    private String fullName;
     private static int id = 0;
     private final int numberId;
     private double salary;
     private int department;
-    public Employee(String firstName, String middleName, String lastName, int department, double salary) {
-        this.firstName = firstName;
-        this.MiddleName = middleName;
-        this.LastName = lastName;
+    public Employee(String fullName, int department, double salary) {
+        this.fullName = fullName;
         this.department = department;
         this.salary = salary;
         Employee.id++;
         this.numberId = Employee.id;
     }
-    public String getFirstName() {
-        return firstName;
+    public String getFullName() {
+        return fullName;
     }
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-    public String getMiddleName() {
-        return MiddleName;
-    }
-    public void setMiddleName(String middleName) {
-        MiddleName = middleName;
-    }
-    public String getLastName() {
-        return LastName;
-    }
-    public void setLastName(String lastName) {
-        LastName = lastName;
+    public void setFullName(String fullName) {
+        fullName = fullName;
     }
     public static int getId() {
         return id;
@@ -51,11 +36,10 @@ public class Employee {
     @Override
     public String toString() {
         return "id " + this.numberId + "/" +
-                " " + firstName + ' ' +
-                " " + MiddleName + ' ' +
-                " " + LastName + ' ' +
+                " " + fullName + ' ' +
                 "/ Зарплата " + salary +
                 "/ отдел №: " + department +
                 ' ';
     }
 }
+
